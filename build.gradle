@@ -107,14 +107,14 @@ loom {
 }
 
 dependencies {
-        implementation fileTree(dir: 'libs/libraries', include: ['*.jar'])
-        implementation 'org.apache.commons:commons-math3:3.6.1'
-        implementation 'com.github.286799714.luaj:luaj-jse:3.0.3'
-        implementation 'com.github.286799714.luaj:luaj-core:3.0.3'
+	implementation fileTree(dir: 'libs/libraries', include: ['*.jar'])
 
 	// 버전을 변경하려면 gradle.properties 파일을 참조
 	// To change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    implementation 'org.apache.commons:commons-math3:3.6.1'
+    implementation 'com.github.286799714.luaj:luaj-core:3.0.3'
+    implementation 'com.github.286799714.luaj:luaj-jse:3.0.3'
 	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
@@ -161,10 +161,15 @@ dependencies {
 
 	// 일부 보간 연산을 수행하기 위한 Apache Commons 수학 라이브러리
 	// Apache Commons Math library for performing some interpolation operations
-	include implementation(minecraftLibraries('org.apache.commons:commons-math3:3.6.1'))
 
 	// 총기 제어에 사용되는 로직 및 애니메이션 상태 머신에 루아 스크립팅 언어를 도입한 LuaJ 라이브러리
 			       }
+dependencies {
+	        implementation 'com.github.di6n:TACZ-Fabric:-SNAPSHOT'
+	}
+    implementation 'org.apache.commons:commons-math3:3.6.1'
+    implementation 'com.github.286799714.luaj:luaj-core:3.0.3'
+    implementation 'com.github.286799714.luaj:luaj-jse:3.0.3'
 
 processResources {
 	inputs.property "version", project.version
